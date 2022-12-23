@@ -1,18 +1,20 @@
 class API{
     #secure;
-    constructor(url,method='GET'){
+    constructor(url,method="GET"){
         this.url=url;
-        this.method=method;
-        this.#secure=url.startWith("https")
+        this.method=method
+        this.#secure=url.startsWith("https")
     }
 
     isSecure(){
         return this.#secure
     }
+
     updateUrl(url){
         this.url=url;
-        this.#secure=url.startWith("https")
+        this.#secure=url.startsWith("https")
     }
 }
+
 
 module.exports = { API }
